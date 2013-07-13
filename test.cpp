@@ -1,3 +1,4 @@
+#include <string>
 #include <zmq.hpp>
 #include <iostream>
 #include <cstring>
@@ -5,6 +6,17 @@
 int main(){
 
 	int parts = 0;
+
+
+	{
+		try{
+			zmq::context_t ctx;
+		}catch(zmq::error_t& e){
+			return 1;
+		}
+	}
+
+
 
 	zmq::context_t context(1);
 
